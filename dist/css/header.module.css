@@ -11,8 +11,8 @@
 }
 
 .container img {
-  width: 10em;
-  margin: 0 3em;
+  width: 7em;
+  margin: 0 0em 0 3em;
 }
 
 .container ul {
@@ -24,9 +24,9 @@
 .container ul li {
   list-style: none;
   font-family: "Red Hat Text", sans-serif;
-  font-size: 1.15em;
+  font-size: 0.9em;
   color: #ffffff;
-  margin: 0 1em;
+  margin: 0 0.5em;
 }
 
 .userSection {

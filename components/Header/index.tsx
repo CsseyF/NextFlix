@@ -21,14 +21,14 @@ export default function index() {
 
       <ul className={style.userSection}>
         <li>
-          <ImSearch size={28} />
+          <ImSearch size={20} />
         </li>
         <li>
-          <BsFillBellFill size={28} />
+          <BsFillBellFill size={20} />
         </li>
         <li>
           <img src="/src/img/profile-icon.jpg" alt="Profile Icon" />
-          <RiArrowDownSFill size={30} />
+          <RiArrowDownSFill size={25} />
         </li>
       </ul>
     </div>
