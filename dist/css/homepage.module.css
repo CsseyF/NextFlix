@@ -1,0 +1,27 @@
+.titlesList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+  left: 10px;
+  margin-left: 15vw;
+  right: auto;
+  width: 2em;
+  height: 1.3em;
+  color: white;
+}
+
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+  margin-right: 15vw;
+  right: 10px;
+  left: auto;
+  width: 2em;
+  height: 1.3em;
+  color: white;
+}
+/*# sourceMappingURL=homepage.module.css.map */

@@ -10,8 +10,51 @@ import { AiOutlineLike } from "react-icons/ai";
 import { AiOutlineDislike } from "react-icons/ai";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
-export default function index() {
+interface Props {
+  bannerPath: string;
+  duration: string;
+  maturity: number;
+  genres: string[];
+}
+
+interface maturity {
+  color: string;
+  text: string;
+}
+
+interface Maturity {
+  [key: number]: maturity;
+}
+
+export default function index(props: Props) {
   const [expanded, setExpanded] = useState<boolean>(false);
+
+  const maturityColors: Maturity = {
+    0: {
+      color: "#009c4c",
+      text: "L",
+    },
+    10: {
+      color: "#2e88bd",
+      text: "10",
+    },
+    12: {
+      color: "#f7c727",
+      text: "12",
+    },
+    14: {
+      color: "#e7792b",
+      text: "14",
+    },
+    16: {
+      color: "#d7262d",
+      text: "16",
+    },
+    18: {
+      color: "#131111",
+      text: "18",
+    },
+  };
 
   function ExpandedCard() {
     return (
@@ -35,14 +78,29 @@ export default function index() {
         </ul>
         <div className={style.titleInfo}>
           <p>99% Match</p>
-          <span className={style.maturityIcon}>16</span>
-          <span>4 Seasons</span>
+          <span
+            className={style.maturityIcon}
+            style={{
+              backgroundColor: maturityColors[props.maturity].color,
+              border: `solid ${maturityColors[props.maturity].color} 0.5em`,
+            }}
+          >
+            {maturityColors[props.maturity].text}
+          </span>
+          <span>{props.duration}</span>
         </div>
         <div className={style.titleGenres}>
           <ul>
-            <li>Absurd ●</li>
-            <li>Quirky ●</li>
-            <li>Irreverent</li>
+            {props.genres.map((item, index, arr) => {
+              return (
+                <>
+                  <li className={style.genresList} key={item}>
+                    {item}
+                    {index !== arr.length - 1 && <span> ● </span>}
+                  </li>
+                </>
+              );
+            })}
           </ul>
         </div>
       </div>
@@ -56,13 +114,9 @@ export default function index() {
       onMouseEnter={() => setExpanded(true)}
     >
       <img
-        src="/src/img/bannerRM.jpg"
-        alt="Rick and Morty"
-        className={
-          expanded
-            ? style.titleBanner && style.titleBannerExpanded
-            : style.titleBanner
-        }
+        src={props.bannerPath}
+        alt="Title Banner"
+        className={expanded ? style.titleBannerExpanded : style.titleBanner}
       />
       {expanded ? ExpandedCard() : null}
     </div>

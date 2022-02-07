@@ -3,6 +3,7 @@
   width: -moz-fit-content;
   width: fit-content;
   font-family: "Red Hat Text", sans-serif;
+  margin: 5em 2em;
 }
 
 .container .titleBanner {
@@ -11,6 +12,8 @@
   border-radius: 0.3em;
   -webkit-transition: 0.25s;
   transition: 0.25s;
+  z-index: 1;
+  position: relative;
   cursor: pointer;
 }
 
@@ -19,13 +22,10 @@
           transform: scale(1.5);
   -webkit-transform-origin: bottom left;
           transform-origin: bottom left;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+  border-radius: 0.3em 0.3em 0 0;
   width: 16em;
-  height: 9em;
-  border-radius: 0.3em;
-  -webkit-transition: 0.25s;
-  transition: 0.25s;
+  z-index: 5;
+  position: relative;
   cursor: pointer;
 }
 
@@ -38,6 +38,8 @@
   margin-top: -1.5em;
   -webkit-transition: 0.45s;
   transition: 0.45s;
+  z-index: 5;
+  position: relative;
 }
 
 .cardInfo ul {
@@ -49,7 +51,7 @@
 .cardInfo ul li {
   list-style: none;
   margin: 0.9em 0.3em;
-  border: lightgray solid 0.15em;
+  border: lightgray solid 0.05em;
   background-color: #303030;
   padding: 0.5em;
   border-radius: 100%;
@@ -92,8 +94,7 @@
 .cardInfo .titleInfo .maturityIcon {
   font-weight: bold;
   font-size: 1.2em;
-  border: #d7262d solid 0.5em;
-  background-color: #d7262d;
+  padding: 0.1em;
   border-radius: 0.3em;
   margin: 0 1em;
 }
@@ -113,11 +114,11 @@
   margin-top: -2em;
 }
 
-.titleGenres ul li {
+.titleGenres .genresList {
   border: none;
   background-color: transparent;
-  font-weight: 300;
-  font-size: 1em;
+  font-weight: 400;
+  font-size: 1.1em;
   margin-left: -2em;
   margin-right: 1.5em;
 }

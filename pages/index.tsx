@@ -5,6 +5,8 @@ import Head from "next/head";
 import Header from "../components/Header";
 import Cards from "../components/Cards";
 
+import HomePage from "../components/HomePage";
+
 const Home: NextPage = () => {
   return (
     <div className={style.main}>
@@ -14,6 +16,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+      <HomePage />
     </div>
   );
 };
